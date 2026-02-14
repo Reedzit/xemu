@@ -275,7 +275,7 @@ static void usb_xblc_handle_control(USBDevice *dev, USBPacket *p,
     default:
         DPRINTF("[XBLC] USB stalled on request 0x%x value 0x%x\n", request, value);
         p->status = USB_RET_STALL;
-        assert(!"Error: USB xblc stalled on control handler\n");
+        assert(!"USB xblc stalled on control handler");
         return;
     }
 }
@@ -310,7 +310,7 @@ static void usb_xblc_handle_data(USBDevice *dev, USBPacket *p)
         break;
     default:
         //Iso cannot report STALL/HALT, but we shouldn't be here anyway.
-        assert(!"Error: USB xblc failed to handle data\n");
+        assert(!"USB xblc failed to handle data");
         break;
     }
 

@@ -172,7 +172,7 @@ static void lpc47m157_io_write(void *opaque, hwaddr addr, uint64_t val,
                         s->config_regs[CONFIG_DEVICE_NUMBER], s->selected_reg, val);
             }
         } else {
-            assert(!"Error: lpc47m157 IO write failed\n");
+            assert(!"lpc47m157 IO write failed");
         }
     }
 }
@@ -196,7 +196,7 @@ static uint64_t lpc47m157_io_read(void *opaque, hwaddr addr, unsigned int size)
                 val = dev[s->selected_reg];
             }
         } else if (addr != INDEX_PORT) {
-            assert(!"Error: lpc47m157 IO failed to read\n");
+            assert(!"lpc47m157 IO failed to read");
         }
     }
 
