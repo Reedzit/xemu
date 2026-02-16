@@ -101,7 +101,6 @@ void user_write(void *opaque, hwaddr addr, uint64_t val, unsigned int size)
                 break;
             default:
                 assert(!"Unknown user register");
-
                 break;
             }
 
